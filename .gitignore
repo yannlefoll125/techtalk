@@ -1,0 +1,16 @@
+**/out/
+**/build-idea/
+**/build/
+**/generated/
+**/log/
+**/gen/
+
+.gradle/
+
+.idea/dataSources
+.idea/inspectionProfiles
+.idea/libraries
+.idea/modules
+.idea/codeStyles
+.idea/*.xml
+.idea/*.iml

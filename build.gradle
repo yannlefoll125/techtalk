@@ -1,0 +1,29 @@
+apply plugin: 'java-library'
+apply plugin: 'distribution'
+
+group 'scoopsoftware'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.jmeter', name: 'ApacheJMeter_java', version: '5.2'
+    implementation group: 'org.apache.jmeter', name: 'jorphan', version: '5.2' //Broken dependencies fix
+}
+
+distributions.main {
+    contents {
+        into('/lib') {
+            from configurations.runtimeClasspath
+        }
+        into('/lib/ext') {
+            from jar
+        }
+    }
+}
+
+
